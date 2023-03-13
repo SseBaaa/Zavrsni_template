@@ -58,7 +58,7 @@
             this.panelSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSideMenu.Location = new System.Drawing.Point(0, 0);
             this.panelSideMenu.Name = "panelSideMenu";
-            this.panelSideMenu.Size = new System.Drawing.Size(250, 674);
+            this.panelSideMenu.Size = new System.Drawing.Size(250, 561);
             this.panelSideMenu.TabIndex = 0;
             // 
             // panelLogo
@@ -83,6 +83,7 @@
             this.buttonMedia.Text = "Media";
             this.buttonMedia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonMedia.UseVisualStyleBackColor = true;
+            this.buttonMedia.Click += new System.EventHandler(this.buttonMedia_Click);
             // 
             // panelMediaSubMenu
             // 
@@ -250,8 +251,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 674);
+            this.ClientSize = new System.Drawing.Size(934, 561);
             this.Controls.Add(this.panelSideMenu);
+            this.MinimumSize = new System.Drawing.Size(950, 600);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panelSideMenu.ResumeLayout(false);

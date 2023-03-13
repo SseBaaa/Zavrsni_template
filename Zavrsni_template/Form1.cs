@@ -15,11 +15,40 @@ namespace Zavrsni_template
         public Form1()
         {
             InitializeComponent();
+            costumizeDesign();
         }
-
+        private void costumizeDesign()
+        {
+            panelMediaSubMenu.Visible = false;
+            panel1.Visible = false;
+        }
+        private void hideSubMenu()
+        {
+            if (panelMediaSubMenu.Visible == true)
+                panelMediaSubMenu.Visible = false;
+            if (panel1.Visible == true)
+                panel1.Visible = false;
+        }
+        private void showSubMenu(Panel subMenu)
+        {
+            if(subMenu.Visible == false)
+            {
+                hideSubMenu();
+                subMenu.Visible = true;
+            }
+            else
+            {
+                subMenu.Visible = false;
+            }
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void buttonMedia_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelMediaSubMenu);
         }
     }
 }
