@@ -21,6 +21,10 @@ namespace Zavrsni_template
         {
             panelMediaSubMenu.Visible = false;
             panel1.Visible = false;
+            panel2.Visible = false;
+            panel3.Visible = false;
+            panel4.Visible = false;
+
         }
         private void hideSubMenu()
         {
@@ -28,6 +32,13 @@ namespace Zavrsni_template
                 panelMediaSubMenu.Visible = false;
             if (panel1.Visible == true)
                 panel1.Visible = false;
+            if (panel2.Visible == true)
+                panel2.Visible = false;
+            if (panel3.Visible == true)
+                panel3.Visible = false;
+            if (panel4.Visible == true)
+                panel4.Visible = false;
+            
         }
         private void showSubMenu(Panel subMenu)
         {
@@ -49,6 +60,61 @@ namespace Zavrsni_template
         private void buttonMedia_Click(object sender, EventArgs e)
         {
             showSubMenu(panelMediaSubMenu);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panel1);
+        }
+
+        private void webButton_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panel2);
+        }
+
+        private void reverseButton_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panel3);
+        }
+
+        private void BinaryButton_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panel4);
+        }
+        private Form activeform = null;
+        private void openChildForm(Form childForm)
+        {
+            if (activeform != null)
+            {
+                activeform.Close();
+            }
+            activeform = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel.Controls.Add(childForm);
+            panel.Tag = childForm;
+            childForm.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ROT16());
+        }
+
+        private void panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void childForm_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
