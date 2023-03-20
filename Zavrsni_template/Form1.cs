@@ -116,5 +116,10 @@ namespace Zavrsni_template
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Basee());
+        }
     }
 }

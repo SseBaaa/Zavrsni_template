@@ -37,19 +37,19 @@
             // 
             // textBoxROT16
             // 
-            this.textBoxROT16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxROT16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxROT16.Location = new System.Drawing.Point(12, 80);
             this.textBoxROT16.Multiline = true;
             this.textBoxROT16.Name = "textBoxROT16";
-            this.textBoxROT16.Size = new System.Drawing.Size(316, 81);
+            this.textBoxROT16.Size = new System.Drawing.Size(316, 181);
             this.textBoxROT16.TabIndex = 0;
             this.textBoxROT16.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // buttonDecipher
             // 
-            this.buttonDecipher.Location = new System.Drawing.Point(285, 196);
+            this.buttonDecipher.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonDecipher.Location = new System.Drawing.Point(290, 300);
             this.buttonDecipher.Name = "buttonDecipher";
             this.buttonDecipher.Size = new System.Drawing.Size(75, 23);
             this.buttonDecipher.TabIndex = 1;
@@ -59,18 +59,18 @@
             // 
             // textBoxDecipher
             // 
-            this.textBoxDecipher.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBoxDecipher.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxDecipher.Location = new System.Drawing.Point(334, 80);
             this.textBoxDecipher.Multiline = true;
             this.textBoxDecipher.Name = "textBoxDecipher";
-            this.textBoxDecipher.Size = new System.Drawing.Size(322, 81);
+            this.textBoxDecipher.Size = new System.Drawing.Size(322, 181);
             this.textBoxDecipher.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(149, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
@@ -81,6 +81,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(463, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 13);
@@ -91,7 +92,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(668, 422);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
+            this.ClientSize = new System.Drawing.Size(668, 522);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxDecipher);
