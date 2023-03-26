@@ -121,5 +121,25 @@ namespace Zavrsni_template
         {
             openChildForm(new Basee());
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            openChildForm(new RSA());
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Morsee());
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            openChildForm(new FileFormat());
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            openChildForm(new EXIF());
+        }
     }
 }
