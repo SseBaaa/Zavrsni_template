@@ -141,5 +141,20 @@ namespace Zavrsni_template
         {
             openChildForm(new EXIF());
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            openChildForm(new DiskImage());
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Stenography());
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            openChildForm(new SQLinjection());
+        }
     }
 }

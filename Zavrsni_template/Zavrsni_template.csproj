@@ -59,6 +59,12 @@
     <Compile Include="Basee.Designer.cs">
       <DependentUpon>Basee.cs</DependentUpon>
     </Compile>
+    <Compile Include="DiskImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiskImage.Designer.cs">
+      <DependentUpon>DiskImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="EXIF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,8 +103,23 @@
     <Compile Include="RSA.Designer.cs">
       <DependentUpon>RSA.cs</DependentUpon>
     </Compile>
+    <Compile Include="SQLinjection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SQLinjection.Designer.cs">
+      <DependentUpon>SQLinjection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stenography.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stenography.Designer.cs">
+      <DependentUpon>Stenography.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Basee.resx">
       <DependentUpon>Basee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiskImage.resx">
+      <DependentUpon>DiskImage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EXIF.resx">
       <DependentUpon>EXIF.cs</DependentUpon>
@@ -126,6 +147,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RSA.resx">
       <DependentUpon>RSA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SQLinjection.resx">
+      <DependentUpon>SQLinjection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stenography.resx">
+      <DependentUpon>Stenography.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

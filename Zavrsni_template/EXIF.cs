@@ -58,7 +58,7 @@ namespace Zavrsni_template
         {
 
             Image image = Image.FromFile(filename);
-            textBoxResults.AppendText(Convert.ToString(Encoding.UTF8.GetString(image.GetPropertyItem(0x0100).Value)) + "\r\n");
+            /*textBoxResults.AppendText(Convert.ToString(Encoding.UTF8.GetString(image.GetPropertyItem(0x0100).Value)) + "\r\n");
             textBoxResults.AppendText(Convert.ToString(Encoding.UTF8.GetString(image.GetPropertyItem(0x0101).Value)) + "\r\n");
             textBoxResults.AppendText(Convert.ToString(Encoding.UTF8.GetString(image.GetPropertyItem(0x0110).Value)) + "\r\n");
             textBoxResults.AppendText(Convert.ToString(Encoding.UTF8.GetString(image.GetPropertyItem(0x0112).Value)) + "\r\n");
@@ -67,19 +67,19 @@ namespace Zavrsni_template
             textBoxResults.AppendText(Convert.ToString(Encoding.UTF8.GetString(image.GetPropertyItem(0x013c).Value)) + "\r\n");
             textBoxResults.AppendText(Convert.ToString(Encoding.UTF8.GetString(image.GetPropertyItem(0x8298).Value)) + "\r\n");
             textBoxResults.AppendText(Convert.ToString(Encoding.UTF8.GetString(image.GetPropertyItem(0x8825).Value)) + "\r\n");
+            */
 
 
-
-            // Get the EXIF data
-            //PropertyItem[] propertyItems = image.PropertyItems;
+             //Get the EXIF data
+            PropertyItem[] propertyItems = image.PropertyItems;
 
             // Display the EXIF data in the text box
-            //textBoxResults.Clear();
-            //foreach (PropertyItem propertyItem in propertyItems)
-            //{
-            //    textBoxResults.AppendText(string.Format("ID: 0x{0:x}\r\nType: {1}\r\nValue: {2}\r\n\r\n",
-            //        propertyItem.Id, propertyItem.Type, Encoding.ASCII.GetString(propertyItem.Value)));
-            //  }
+            textBoxResults.Clear();
+            foreach (PropertyItem propertyItem in propertyItems)
+            {
+                textBoxResults.AppendText(string.Format("ID: 0x{0:x}\r\nType: {1}\r\nValue: {2}\r\n\r\n",
+                    propertyItem.Id, propertyItem.Type, Encoding.ASCII.GetString(propertyItem.Value)));
+              }
         }
 
 
