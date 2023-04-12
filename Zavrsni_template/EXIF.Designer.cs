@@ -29,24 +29,15 @@
         private void InitializeComponent()
         {
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.buttonUpload = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxResults = new System.Windows.Forms.TextBox();
+            this.dgvExifData = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExifData)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // buttonUpload
-            // 
-            this.buttonUpload.Location = new System.Drawing.Point(148, 64);
-            this.buttonUpload.Name = "buttonUpload";
-            this.buttonUpload.Size = new System.Drawing.Size(345, 119);
-            this.buttonUpload.TabIndex = 0;
-            this.buttonUpload.Text = "Upload";
-            this.buttonUpload.UseVisualStyleBackColor = true;
-            this.buttonUpload.Click += new System.EventHandler(this.buttonUpload_Click);
             // 
             // button1
             // 
@@ -66,18 +57,27 @@
             this.textBoxResults.Size = new System.Drawing.Size(345, 136);
             this.textBoxResults.TabIndex = 2;
             // 
+            // dgvExifData
+            // 
+            this.dgvExifData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvExifData.Location = new System.Drawing.Point(148, 33);
+            this.dgvExifData.Name = "dgvExifData";
+            this.dgvExifData.Size = new System.Drawing.Size(345, 150);
+            this.dgvExifData.TabIndex = 3;
+            // 
             // EXIF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(668, 522);
+            this.Controls.Add(this.dgvExifData);
             this.Controls.Add(this.textBoxResults);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.buttonUpload);
             this.Name = "EXIF";
             this.Text = "EXIF";
             this.Load += new System.EventHandler(this.EXIF_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvExifData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -86,8 +86,8 @@
         #endregion
 
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button buttonUpload;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxResults;
+        private System.Windows.Forms.DataGridView dgvExifData;
     }
 }

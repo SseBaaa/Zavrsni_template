@@ -223,6 +223,7 @@
             this.button18.Text = ".exe programs";
             this.button18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
             // 
             // button19
             // 

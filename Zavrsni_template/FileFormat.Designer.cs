@@ -28,49 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonCheck = new System.Windows.Forms.Button();
-            this.comboBoxFile = new System.Windows.Forms.ComboBox();
-            this.buttonUpload = new System.Windows.Forms.Button();
+            this.btnOpenFile = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txtHeader = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // buttonCheck
+            // btnOpenFile
             // 
-            this.buttonCheck.Location = new System.Drawing.Point(177, 311);
-            this.buttonCheck.Name = "buttonCheck";
-            this.buttonCheck.Size = new System.Drawing.Size(292, 164);
-            this.buttonCheck.TabIndex = 0;
-            this.buttonCheck.Text = "Check";
-            this.buttonCheck.UseVisualStyleBackColor = true;
-            this.buttonCheck.Click += new System.EventHandler(this.buttonCheck_Click);
-            // 
-            // comboBoxFile
-            // 
-            this.comboBoxFile.FormattingEnabled = true;
-            this.comboBoxFile.Items.AddRange(new object[] {
-            "PNG",
-            "ZIP",
-            "RAR",
-            "JPG",
-            "TXT"});
-            this.comboBoxFile.Location = new System.Drawing.Point(262, 86);
-            this.comboBoxFile.Name = "comboBoxFile";
-            this.comboBoxFile.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxFile.TabIndex = 1;
-            // 
-            // buttonUpload
-            // 
-            this.buttonUpload.Location = new System.Drawing.Point(228, 128);
-            this.buttonUpload.Name = "buttonUpload";
-            this.buttonUpload.Size = new System.Drawing.Size(194, 108);
-            this.buttonUpload.TabIndex = 2;
-            this.buttonUpload.Text = "UploadFile";
-            this.buttonUpload.UseVisualStyleBackColor = true;
-            this.buttonUpload.Click += new System.EventHandler(this.buttonUpload_Click);
+            this.btnOpenFile.Location = new System.Drawing.Point(184, 117);
+            this.btnOpenFile.Name = "btnOpenFile";
+            this.btnOpenFile.Size = new System.Drawing.Size(292, 164);
+            this.btnOpenFile.TabIndex = 0;
+            this.btnOpenFile.Text = "Check";
+            this.btnOpenFile.UseVisualStyleBackColor = true;
+            this.btnOpenFile.Click += new System.EventHandler(this.buttonCheck_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // txtHeader
+            // 
+            this.txtHeader.Location = new System.Drawing.Point(184, 306);
+            this.txtHeader.Multiline = true;
+            this.txtHeader.Name = "txtHeader";
+            this.txtHeader.Size = new System.Drawing.Size(292, 131);
+            this.txtHeader.TabIndex = 1;
             // 
             // FileFormat
             // 
@@ -78,20 +61,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(668, 522);
-            this.Controls.Add(this.buttonUpload);
-            this.Controls.Add(this.comboBoxFile);
-            this.Controls.Add(this.buttonCheck);
+            this.Controls.Add(this.txtHeader);
+            this.Controls.Add(this.btnOpenFile);
             this.Name = "FileFormat";
             this.Text = "FileFormat";
+            this.Load += new System.EventHandler(this.FileFormat_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button buttonCheck;
-        private System.Windows.Forms.ComboBox comboBoxFile;
-        private System.Windows.Forms.Button buttonUpload;
+        private System.Windows.Forms.Button btnOpenFile;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox txtHeader;
     }
 }

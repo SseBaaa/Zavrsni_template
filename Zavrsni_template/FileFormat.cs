@@ -14,7 +14,6 @@ namespace Zavrsni_template
     public partial class FileFormat : Form
     {
         string filename;
-        string headerSignature = "";
         public FileFormat()
         {
             InitializeComponent();
@@ -34,50 +33,81 @@ namespace Zavrsni_template
 
         private void buttonCheck_Click(object sender, EventArgs e)
         {
-            if (comboBoxFile.SelectedIndex == 0)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                headerSignature = "\x89\x50\x4E\x47\x0D\x0A\x1A\x0A"; //png file header signature
-            }
-            if(comboBoxFile.SelectedIndex == 1)
-            {
-                headerSignature = "PK\x03\x04"; // zip file header signature
-            }
-            if(comboBoxFile.SelectedIndex == 2)
-            {
-                headerSignature = "Rar!\x1A\x07\x00"; // rar file header signature
-            }
-            if(comboBoxFile.SelectedIndex == 3)
-            {
-                headerSignature = "\xFF\xD8";
-            }
-            if (comboBoxFile.SelectedIndex == 4)
-            {
-                headerSignature = "%PDF-";
-            }
+                string filePath = openFileDialog1.FileName;
 
-            using (FileStream fileStream = File.OpenRead(filename))
-            {
-                byte[] fileBytes = new byte[headerSignature.Length];
-                int bytesRead = fileStream.Read(fileBytes, 0, headerSignature.Length);
-
-                if (bytesRead != headerSignature.Length)
+                try
                 {
-                    Console.WriteLine("File is too short.");
+                    // Read the header of the file
+                    string header = ReadFileHeader(filePath);
+
+                    // Identify the file type based on the header
+                    string fileType = GetFileType(header);
+
+                    // Display the file type in the TextBox
+                    txtHeader.Text = fileType;
                 }
-                else
+                catch (Exception ex)
                 {
-                    string headerString = System.Text.Encoding.ASCII.GetString(fileBytes);
-                    if (headerString == headerSignature)
-                    {
-                        MessageBox.Show("File has a valid header", "Valid", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("File dosent have a valid header", "Not valid", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
+                    MessageBox.Show("Error reading the file: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+
+        }
+        private string GetFileType(string header)
+        {
+            Dictionary<string, string> fileSignatures = new Dictionary<string, string>
+    {
+        { "89504E47", ".png" },
+        { "47494638", ".gif" },
+        { "25504446", ".pdf" },
+        { "FFD8FF", ".jpg" },
+        { "49492A00", ".tif" },
+        { "4D4D002A", ".tif" },
+        { "504B0304", ".zip" },
+        { "52617221", ".rar" },
+        { "D0CF11E0", ".doc" },
+        { "504B34", ".docx" },
+        { "5A4D", ".exe" },
+    };
+
+            foreach (var signature in fileSignatures)
+            {
+                if (header.StartsWith(signature.Key))
+                {
+                    return signature.Value;
+                }
+            }
+
+            return "Unknown";
+        }
+
+        private string ReadFileHeader(string filePath, int headerSize = 12)
+        {
+            byte[] headerBytes;
+
+            using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+            {
+                headerBytes = new byte[Math.Min(headerSize, fs.Length)];
+                fs.Read(headerBytes, 0, headerBytes.Length);
+            }
+
+            // Convert the bytes to a string representation
+            StringBuilder sb = new StringBuilder();
+
+            foreach (byte b in headerBytes)
+            {
+                sb.Append(b.ToString("X2"));
+            }
+
+            return sb.ToString().Trim();
+        }
+
+        private void FileFormat_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

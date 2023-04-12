@@ -28,24 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonDecode = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.btnLoadImage = new System.Windows.Forms.Button();
+            this.txtDecodedMessage = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // buttonDecode
-            // 
-            this.buttonDecode.Location = new System.Drawing.Point(269, 213);
-            this.buttonDecode.Name = "buttonDecode";
-            this.buttonDecode.Size = new System.Drawing.Size(75, 23);
-            this.buttonDecode.TabIndex = 0;
-            this.buttonDecode.Text = "Decode";
-            this.buttonDecode.UseVisualStyleBackColor = true;
-            this.buttonDecode.Click += new System.EventHandler(this.buttonDecode_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btnLoadImage
+            // 
+            this.btnLoadImage.Location = new System.Drawing.Point(218, 179);
+            this.btnLoadImage.Name = "btnLoadImage";
+            this.btnLoadImage.Size = new System.Drawing.Size(207, 82);
+            this.btnLoadImage.TabIndex = 0;
+            this.btnLoadImage.Text = "Load";
+            this.btnLoadImage.UseVisualStyleBackColor = true;
+            this.btnLoadImage.Click += new System.EventHandler(this.btnLoadImage_Click);
+            // 
+            // txtDecodedMessage
+            // 
+            this.txtDecodedMessage.Location = new System.Drawing.Point(218, 268);
+            this.txtDecodedMessage.Multiline = true;
+            this.txtDecodedMessage.Name = "txtDecodedMessage";
+            this.txtDecodedMessage.Size = new System.Drawing.Size(207, 91);
+            this.txtDecodedMessage.TabIndex = 1;
             // 
             // Stenography
             // 
@@ -53,17 +62,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(668, 522);
-            this.Controls.Add(this.buttonDecode);
+            this.Controls.Add(this.txtDecodedMessage);
+            this.Controls.Add(this.btnLoadImage);
             this.Name = "Stenography";
             this.Text = "Stenography";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonDecode;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.Button btnLoadImage;
+        private System.Windows.Forms.TextBox txtDecodedMessage;
     }
 }

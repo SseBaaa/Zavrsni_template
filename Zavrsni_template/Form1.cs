@@ -156,5 +156,10 @@ namespace Zavrsni_template
         {
             openChildForm(new SQLinjection());
         }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            openChildForm(new EXE());
+        }
     }
 }

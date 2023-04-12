@@ -17,42 +17,92 @@ namespace Zavrsni_template
             InitializeComponent();
         }
 
-        private void buttonDecode_Click(object sender, EventArgs e)
+        private void btnLoadImage_Click(object sender, EventArgs e)
         {
-            // Open the source image and get the bitmap data
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "Image Files(*.bmp;*.jpg;*.png)|*.bmp;*.jpg;*.png";
+            openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                Bitmap bmp = new Bitmap(openFileDialog1.FileName);
+                string imagePath = openFileDialog1.FileName;
+                Bitmap image = new Bitmap(imagePath);
+                string decodedMessage = DecodeMessageFromImage(image);
+                txtDecodedMessage.Text = decodedMessage;
+            }
+        }
+        private string DecodeMessageFromImage(Bitmap image)
+        {
+            int colorUnitIndex = 0;
+            int charValue = 0;
+            StringBuilder hiddenMessage = new StringBuilder();
 
-                // Create a new bitmap for the decoded image
-                Bitmap decodedImage = new Bitmap(bmp.Width, bmp.Height);
-
-                // Loop through the pixels of the source image and extract the least significant bit of each color channel
-                for (int y = 0; y < bmp.Height; y++)
+            for (int i = 0; i < image.Height; i++)
+            {
+                for (int j = 0; j < image.Width; j++)
                 {
-                    for (int x = 0; x < bmp.Width; x++)
+                    Color pixel = image.GetPixel(j, i);
+
+                    // Extracting LSBs from the pixel's color channels
+                    int redLSB = pixel.R & 1;
+                    int greenLSB = pixel.G & 1;
+                    int blueLSB = pixel.B & 1;
+
+                    charValue = SetBitValue(charValue, colorUnitIndex % 8, redLSB);
+                    colorUnitIndex++;
+
+                    if (colorUnitIndex % 8 == 0)
                     {
-                        Color pixel = bmp.GetPixel(x, y);
-                        byte r = (byte)(pixel.R & 1);
-                        byte g = (byte)(pixel.G & 1);
-                        byte b = (byte)(pixel.B & 1);
-                        byte decodedByte = (byte)((r << 2) | (g << 1) | b);
-                        Color decodedPixel = Color.FromArgb(decodedByte, decodedByte, decodedByte);
-                        decodedImage.SetPixel(x, y, decodedPixel);
+                        if (charValue == 0)
+                        {
+                            return hiddenMessage.ToString();
+                        }
+
+                        hiddenMessage.Append((char)charValue);
+                        charValue = 0;
+                    }
+
+                    charValue = SetBitValue(charValue, colorUnitIndex % 8, greenLSB);
+                    colorUnitIndex++;
+
+                    if (colorUnitIndex % 8 == 0)
+                    {
+                        if (charValue == 0)
+                        {
+                            return hiddenMessage.ToString();
+                        }
+
+                        hiddenMessage.Append((char)charValue);
+                        charValue = 0;
+                    }
+
+                    charValue = SetBitValue(charValue, colorUnitIndex % 8, blueLSB);
+                    colorUnitIndex++;
+
+                    if (colorUnitIndex % 8 == 0)
+                    {
+                        if (charValue == 0)
+                        {
+                            return hiddenMessage.ToString();
+                        }
+
+                        hiddenMessage.Append((char)charValue);
+                        charValue = 0;
                     }
                 }
-
-                // Save the decoded image
-                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-                saveFileDialog1.Filter = "Image Files(*.bmp;*.jpg;*.png)|*.bmp;*.jpg;*.png";
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    decodedImage.Save(saveFileDialog1.FileName);
-                }
-
             }
+
+            return hiddenMessage.ToString();
+        }
+
+        private int SetBitValue(int oldValue, int bitIndex, int bitValue)
+        {
+            int mask = 1 << bitIndex;
+            int newValue = oldValue & ~mask;
+
+            if (bitValue == 1)
+            {
+                newValue |= mask;
+            }
+
+            return newValue;
         }
     }
 }
