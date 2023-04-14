@@ -32,7 +32,7 @@ namespace Zavrsni_template
                 CreateNoWindow = true,
             };
 
-            using Process process = new Process { StartInfo = startInfo };
+            Process process = new Process { StartInfo = startInfo };
             try
             {
                 process.Start();
@@ -45,6 +45,11 @@ namespace Zavrsni_template
             {
                 outputTextBox.AppendText($"Exception: {ex.Message}\n");
             }
+            finally
+            {
+                process.Dispose();
+            }
         }
+        
     }
 }

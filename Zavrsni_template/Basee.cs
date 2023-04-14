@@ -27,6 +27,7 @@ namespace Zavrsni_template
 
         private void buttonDecipher_Click(object sender, EventArgs e)
         {
+           
             if (comboBox1.SelectedIndex == 0) 
             {
                 byte[] byteArray = Enumerable.Range(0, textBox1.Text.Length)
@@ -79,7 +80,17 @@ namespace Zavrsni_template
             }
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
+
+        private void Basee_SizeChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
         
     }
 

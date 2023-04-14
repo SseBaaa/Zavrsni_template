@@ -161,5 +161,55 @@ namespace Zavrsni_template
         {
             openChildForm(new EXE());
         }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Buffer());
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Decompile());
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            openChildForm(new TheC());
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            openChildForm(new TheA());
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            openChildForm(new CommandInjection());
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            openChildForm(new CSSs());
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ServerForgery());
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Registers());
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Heap());
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Stack());
+        }
     }
 }

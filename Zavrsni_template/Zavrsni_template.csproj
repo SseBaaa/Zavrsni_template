@@ -80,6 +80,24 @@
     <Compile Include="Buffer.Designer.cs">
       <DependentUpon>Buffer.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommandInjection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CommandInjection.Designer.cs">
+      <DependentUpon>CommandInjection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CSSs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CSSs.Designer.cs">
+      <DependentUpon>CSSs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Decompile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Decompile.Designer.cs">
+      <DependentUpon>Decompile.cs</DependentUpon>
+    </Compile>
     <Compile Include="DiskImage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +128,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Heap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Heap.Designer.cs">
+      <DependentUpon>Heap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Morsee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +142,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registers.Designer.cs">
+      <DependentUpon>Registers.cs</DependentUpon>
+    </Compile>
     <Compile Include="ROT16.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,11 +160,23 @@
     <Compile Include="RSA.Designer.cs">
       <DependentUpon>RSA.cs</DependentUpon>
     </Compile>
+    <Compile Include="ServerForgery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerForgery.Designer.cs">
+      <DependentUpon>ServerForgery.cs</DependentUpon>
+    </Compile>
     <Compile Include="SQLinjection.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SQLinjection.Designer.cs">
       <DependentUpon>SQLinjection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stack.Designer.cs">
+      <DependentUpon>Stack.cs</DependentUpon>
     </Compile>
     <Compile Include="Stenography.cs">
       <SubType>Form</SubType>
@@ -142,11 +184,32 @@
     <Compile Include="Stenography.Designer.cs">
       <DependentUpon>Stenography.cs</DependentUpon>
     </Compile>
+    <Compile Include="TheA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TheA.Designer.cs">
+      <DependentUpon>TheA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TheC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TheC.Designer.cs">
+      <DependentUpon>TheC.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Basee.resx">
       <DependentUpon>Basee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Buffer.resx">
       <DependentUpon>Buffer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommandInjection.resx">
+      <DependentUpon>CommandInjection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CSSs.resx">
+      <DependentUpon>CSSs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Decompile.resx">
+      <DependentUpon>Decompile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DiskImage.resx">
       <DependentUpon>DiskImage.cs</DependentUpon>
@@ -163,6 +226,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Heap.resx">
+      <DependentUpon>Heap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Morsee.resx">
       <DependentUpon>Morsee.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,17 +241,32 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Registers.resx">
+      <DependentUpon>Registers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ROT16.resx">
       <DependentUpon>ROT16.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RSA.resx">
       <DependentUpon>RSA.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ServerForgery.resx">
+      <DependentUpon>ServerForgery.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SQLinjection.resx">
       <DependentUpon>SQLinjection.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Stack.resx">
+      <DependentUpon>Stack.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Stenography.resx">
       <DependentUpon>Stenography.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TheA.resx">
+      <DependentUpon>TheA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TheC.resx">
+      <DependentUpon>TheC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
