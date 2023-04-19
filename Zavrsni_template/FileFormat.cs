@@ -13,10 +13,13 @@ namespace Zavrsni_template
 {
     public partial class FileFormat : Form
     {
+        private ToolTip helpToolTip;
+        private TextBox helpTextBox;
         string filename;
         public FileFormat()
         {
             InitializeComponent();
+            InitializeHelpButton();
         }
 
         private void buttonUpload_Click(object sender, EventArgs e)
@@ -108,6 +111,60 @@ namespace Zavrsni_template
         private void FileFormat_Load(object sender, EventArgs e)
         {
 
+        }
+        private void InitializeHelpButton()
+        {
+            // Create a round button
+            RoundButton helpButton = new RoundButton
+            {
+                Location = new Point(17, 350), // Change the location based on your layout
+                Size = new Size(80, 80), // Adjust the size as needed
+                FlatStyle = FlatStyle.Flat,
+                BackgroundImageLayout = ImageLayout.Stretch
+            };
+
+            // Set the button's background image
+            helpButton.BackgroundImage = Image.FromFile(@"C:\Users\SeBa\source\repos\Zavrsni_templateV13\Zavrsni_template\Resources\pictureForProgram.png"); // Replace with your image filename and extension
+
+            // Add the button to the form
+            this.Controls.Add(helpButton);
+
+            // Create a ToolTip
+            helpToolTip = new ToolTip
+            {
+                // Set the tooltip properties, if needed
+                AutoPopDelay = 5000,
+                InitialDelay = 1000,
+                ReshowDelay = 500,
+                ShowAlways = true
+            };
+            helpToolTip.SetToolTip(helpButton, "Click this button to get helpful information about File formats and headers.");
+            // Add ButtonClick event handler
+            helpButton.Click += ButtonClick;
+
+            // Create a TextBox
+            helpTextBox = new TextBox
+            {
+                Location = new Point(helpButton.Location.X, helpButton.Location.Y - 135), // Above the button
+                Size = new Size(150, 130), // Adjust the size as needed
+                Visible = false, // Initially hide the TextBox
+                ReadOnly = true, // Make the TextBox read-only, so the text can be copied but not modified
+                Multiline = true,
+                ScrollBars = ScrollBars.Vertical
+            };
+
+            // Add the TextBox to the form
+            this.Controls.Add(helpTextBox);
+        }
+        private void ButtonClick(object sender, EventArgs e)
+        {
+
+            // Set the TextBox text to the desired message
+            helpTextBox.Text = "1." + "https://en.wikipedia.org/wiki/List_of_file_signatures" + Environment.NewLine +
+                "2." + "https://www.garykessler.net/library/file_sigs.html" + Environment.NewLine +
+                "3." + "https://www.microfocus.com/documentation/server-express/sx40/fhfile.htm";
+
+            helpTextBox.Visible = !helpTextBox.Visible;
         }
     }
 }

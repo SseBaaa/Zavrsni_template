@@ -80,6 +80,12 @@
     <Compile Include="Buffer.Designer.cs">
       <DependentUpon>Buffer.cs</DependentUpon>
     </Compile>
+    <Compile Include="ButtonRound.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ButtonRound.Designer.cs">
+      <DependentUpon>ButtonRound.cs</DependentUpon>
+    </Compile>
     <Compile Include="CommandInjection.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Buffer.resx">
       <DependentUpon>Buffer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ButtonRound.resx">
+      <DependentUpon>ButtonRound.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CommandInjection.resx">
       <DependentUpon>CommandInjection.cs</DependentUpon>

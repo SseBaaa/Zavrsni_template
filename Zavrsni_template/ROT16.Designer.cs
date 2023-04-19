@@ -101,6 +101,7 @@
             this.Controls.Add(this.textBoxROT16);
             this.Name = "ROT16";
             this.Text = "ROT16";
+            this.Load += new System.EventHandler(this.ROT16_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
