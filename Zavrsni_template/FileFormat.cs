@@ -124,7 +124,7 @@ namespace Zavrsni_template
             };
 
             // Set the button's background image
-            helpButton.BackgroundImage = Image.FromFile(@"C:\Users\SeBa\source\repos\Zavrsni_templateV13\Zavrsni_template\Resources\pictureForProgram.png"); // Replace with your image filename and extension
+            helpButton.BackgroundImage = Properties.Resources.pictureForProgram;
 
             // Add the button to the form
             this.Controls.Add(helpButton);

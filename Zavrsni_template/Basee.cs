@@ -105,18 +105,20 @@ namespace Zavrsni_template
             // Create a round button
             RoundButton helpButton = new RoundButton
             {
-                Location = new Point(17, 350), // Change the location based on your layout
+                Location = new Point(30, 310), // Change the location based on your layout
                 Size = new Size(80, 80), // Adjust the size as needed
                 FlatStyle = FlatStyle.Flat,
-                BackgroundImageLayout = ImageLayout.Stretch
+                BackgroundImageLayout = ImageLayout.Stretch,
+                Anchor = AnchorStyles.Bottom | AnchorStyles.Left
+
             };
 
             // Set the button's background image
-            helpButton.BackgroundImage = Image.FromFile(@"C:\Users\SeBa\source\repos\Zavrsni_templateV13\Zavrsni_template\Resources\pictureForProgram.png"); // Replace with your image filename and extension
+            helpButton.BackgroundImage = Properties.Resources.pictureForProgram;
 
             // Add the button to the form
             this.Controls.Add(helpButton);
-
+            helpButton.BringToFront();
             // Create a ToolTip
             helpToolTip = new ToolTip
             {
@@ -133,7 +135,7 @@ namespace Zavrsni_template
             // Create a TextBox
             helpTextBox = new TextBox
             {
-                Location = new Point(helpButton.Location.X, helpButton.Location.Y - 65), // Above the button
+                Location = new Point(helpButton.Location.X, helpButton.Location.Y - 20), // Above the button
                 Size = new Size(400, 60), // Adjust the size as needed
                 Visible = false, // Initially hide the TextBox
                 ReadOnly = true, // Make the TextBox read-only, so the text can be copied but not modified
@@ -143,6 +145,7 @@ namespace Zavrsni_template
 
             // Add the TextBox to the form
             this.Controls.Add(helpTextBox);
+            helpTextBox.BringToFront();
         }
         private void ButtonClick(object sender, EventArgs e)
         {
