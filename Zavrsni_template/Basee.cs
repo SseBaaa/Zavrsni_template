@@ -14,7 +14,8 @@ using System.Drawing.Drawing2D;
 
 namespace Zavrsni_template
 {
-    
+ 
+
     public partial class Basee : Form
     {
         private ToolTip helpToolTip;
@@ -32,7 +33,47 @@ namespace Zavrsni_template
 
         private void buttonDecipher_Click(object sender, EventArgs e)
         {
-           
+             string Base32Decode(string input)
+            {
+                const string Base32Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+
+                // Remove padding characters from the input string
+                input = input.TrimEnd('=');
+
+                // Convert each character in the input string to its corresponding 5-bit value
+                var bitString = "";
+                foreach (char c in input)
+                {
+                    int value = Base32Alphabet.IndexOf(char.ToUpper(c));
+                    if (value >= 0)
+                    {
+                        bitString += Convert.ToString(value, 2).PadLeft(5, '0');
+                    }
+                    else
+                    {
+                        throw new ArgumentException("Invalid character in the Base32 input.");
+                    }
+                }
+
+                // Adjust the length of the bit string to be a multiple of 8
+                int paddingCount = (8 - (bitString.Length % 8)) % 8;
+                bitString = bitString.PadRight(bitString.Length + paddingCount, '0');
+
+                // Convert the bit string to bytes and then to a string
+                var bytes = new byte[bitString.Length / 8];
+                for (int i = 0; i < bitString.Length; i += 8)
+                {
+                    bytes[i / 8] = Convert.ToByte(bitString.Substring(i, 8), 2);
+                }
+
+                return System.Text.Encoding.UTF8.GetString(bytes);
+            }
+            string Base64Decode(string input)
+            {
+                byte[] bytes = Convert.FromBase64String(input);
+                return System.Text.Encoding.UTF8.GetString(bytes);
+            }
+
             if (comboBox1.SelectedIndex == 0) 
             {
                 byte[] byteArray = Enumerable.Range(0, textBox1.Text.Length)
@@ -44,45 +85,21 @@ namespace Zavrsni_template
             }
             if(comboBox1.SelectedIndex == 1)
             {
-                string ciphertext = textBox1.Text;
-                byte[] data = Base32Decode(ciphertext);
-                textBox2.AppendText(System.Text.Encoding.UTF8.GetString(data));
-                
-                byte[] Base32Decode(string input)
-                {
-                    input = input.Replace("=", "");
-                    if (input.Length % 8 != 0)
-                        throw new ArgumentException("Invalid length for Base32 input.");
-                    byte[] output = new byte[input.Length * 5 / 8];
-                    int outputIndex = 0;
-                    for (int i = 0; i < input.Length; i += 8)
-                    {
-                        ulong value = 0;
-                        for (int j = 0; j < 8; j++)
-                        {
-                            value <<= 5;
-                            value |= Base32CharToValue(input[i + j]);
-                        }
-                        output[outputIndex++] = (byte)(value >> 32);
-                        output[outputIndex++] = (byte)(value >> 24);
-                        output[outputIndex++] = (byte)(value >> 16);
-                        output[outputIndex++] = (byte)(value >> 8);
-                        output[outputIndex++] = (byte)value;
-                    }
-                    return output;
-                }
-                ulong Base32CharToValue(char c)
-                {
-                    if (c >= 'A' && c <= 'Z')
-                        return (ulong)(c - 'A');
-                    if (c >= '2' && c <= '7')
-                        return (ulong)(c - '2' + 26);
-                    throw new ArgumentException("Invalid character in Base32 input.");
-                }
+                string base32String = textBox1.Text; 
+                string decodedText = Base32Decode(base32String);
+                textBox2.AppendText(decodedText);
+            }
+            if(comboBox1.SelectedIndex == 2)
+            {
+                string base64String = textBox1.Text;
+                string decodedText1 = Base64Decode(base64String);
+                textBox2.AppendText(decodedText1);
+            }
+               
 
                
 
-            }
+            
 
         }
 
