@@ -40,9 +40,9 @@
             // 
             // btnLoadImage
             // 
-            this.btnLoadImage.Location = new System.Drawing.Point(218, 179);
+            this.btnLoadImage.Location = new System.Drawing.Point(176, 90);
             this.btnLoadImage.Name = "btnLoadImage";
-            this.btnLoadImage.Size = new System.Drawing.Size(207, 82);
+            this.btnLoadImage.Size = new System.Drawing.Size(281, 103);
             this.btnLoadImage.TabIndex = 0;
             this.btnLoadImage.Text = "Load";
             this.btnLoadImage.UseVisualStyleBackColor = true;
@@ -50,10 +50,10 @@
             // 
             // txtDecodedMessage
             // 
-            this.txtDecodedMessage.Location = new System.Drawing.Point(218, 268);
+            this.txtDecodedMessage.Location = new System.Drawing.Point(176, 199);
             this.txtDecodedMessage.Multiline = true;
             this.txtDecodedMessage.Name = "txtDecodedMessage";
-            this.txtDecodedMessage.Size = new System.Drawing.Size(207, 91);
+            this.txtDecodedMessage.Size = new System.Drawing.Size(281, 134);
             this.txtDecodedMessage.TabIndex = 1;
             // 
             // Stenography
@@ -61,11 +61,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(668, 522);
+            this.ClientSize = new System.Drawing.Size(668, 390);
             this.Controls.Add(this.txtDecodedMessage);
             this.Controls.Add(this.btnLoadImage);
             this.Name = "Stenography";
             this.Text = "Stenography";
+            this.Load += new System.EventHandler(this.Stenography_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Filename = new System.Windows.Forms.Button();
-            this.btnExecute = new System.Windows.Forms.Button();
-            this.btnExecuteSecure = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.btnExecuteSecure = new System.Windows.Forms.Button();
+            this.btnExecute = new System.Windows.Forms.Button();
+            this.Filename = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,63 +47,13 @@
             this.groupBox1.Controls.Add(this.btnExecute);
             this.groupBox1.Controls.Add(this.Filename);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox1.Location = new System.Drawing.Point(47, 43);
+            this.groupBox1.Location = new System.Drawing.Point(40, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(573, 438);
+            this.groupBox1.Size = new System.Drawing.Size(573, 370);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Command Injection";
-            // 
-            // Filename
-            // 
-            this.Filename.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Filename.Location = new System.Drawing.Point(19, 46);
-            this.Filename.Name = "Filename";
-            this.Filename.Size = new System.Drawing.Size(172, 23);
-            this.Filename.TabIndex = 0;
-            this.Filename.Text = "Filename";
-            this.Filename.UseVisualStyleBackColor = true;
-            this.Filename.Click += new System.EventHandler(this.Filename_Click);
-            // 
-            // btnExecute
-            // 
-            this.btnExecute.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnExecute.Location = new System.Drawing.Point(19, 111);
-            this.btnExecute.Name = "btnExecute";
-            this.btnExecute.Size = new System.Drawing.Size(260, 45);
-            this.btnExecute.TabIndex = 1;
-            this.btnExecute.Text = "Execute";
-            this.btnExecute.UseVisualStyleBackColor = true;
-            this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
-            // 
-            // btnExecuteSecure
-            // 
-            this.btnExecuteSecure.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnExecuteSecure.Location = new System.Drawing.Point(294, 111);
-            this.btnExecuteSecure.Name = "btnExecuteSecure";
-            this.btnExecuteSecure.Size = new System.Drawing.Size(260, 45);
-            this.btnExecuteSecure.TabIndex = 2;
-            this.btnExecuteSecure.Text = "Execute Secure";
-            this.btnExecuteSecure.UseVisualStyleBackColor = true;
-            this.btnExecuteSecure.Click += new System.EventHandler(this.btnExecuteSecure_Click);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(19, 176);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(535, 226);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 409);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Status:";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lblStatus
             // 
@@ -113,12 +63,63 @@
             this.lblStatus.Size = new System.Drawing.Size(0, 13);
             this.lblStatus.TabIndex = 5;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 344);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Status:";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(19, 115);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(535, 226);
+            this.richTextBox1.TabIndex = 3;
+            this.richTextBox1.Text = "";
+            // 
+            // btnExecuteSecure
+            // 
+            this.btnExecuteSecure.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnExecuteSecure.Location = new System.Drawing.Point(294, 64);
+            this.btnExecuteSecure.Name = "btnExecuteSecure";
+            this.btnExecuteSecure.Size = new System.Drawing.Size(260, 45);
+            this.btnExecuteSecure.TabIndex = 2;
+            this.btnExecuteSecure.Text = "Execute Secure";
+            this.btnExecuteSecure.UseVisualStyleBackColor = true;
+            this.btnExecuteSecure.Click += new System.EventHandler(this.btnExecuteSecure_Click);
+            // 
+            // btnExecute
+            // 
+            this.btnExecute.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnExecute.Location = new System.Drawing.Point(19, 64);
+            this.btnExecute.Name = "btnExecute";
+            this.btnExecute.Size = new System.Drawing.Size(260, 45);
+            this.btnExecute.TabIndex = 1;
+            this.btnExecute.Text = "Execute";
+            this.btnExecute.UseVisualStyleBackColor = true;
+            this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
+            // 
+            // Filename
+            // 
+            this.Filename.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Filename.Location = new System.Drawing.Point(6, 19);
+            this.Filename.Name = "Filename";
+            this.Filename.Size = new System.Drawing.Size(172, 23);
+            this.Filename.TabIndex = 0;
+            this.Filename.Text = "Filename";
+            this.Filename.UseVisualStyleBackColor = true;
+            this.Filename.Click += new System.EventHandler(this.Filename_Click);
+            // 
             // CommandInjection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(668, 522);
+            this.ClientSize = new System.Drawing.Size(668, 390);
             this.Controls.Add(this.groupBox1);
             this.Name = "CommandInjection";
             this.Text = "CommandInjection";

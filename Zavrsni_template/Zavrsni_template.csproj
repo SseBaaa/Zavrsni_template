@@ -307,5 +307,8 @@
   <ItemGroup>
     <None Include="Resources\pictureForProgram.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\sqlmap_report.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

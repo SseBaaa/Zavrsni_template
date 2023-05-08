@@ -34,7 +34,7 @@
             // 
             // exploitButton
             // 
-            this.exploitButton.Location = new System.Drawing.Point(178, 130);
+            this.exploitButton.Location = new System.Drawing.Point(178, 39);
             this.exploitButton.Name = "exploitButton";
             this.exploitButton.Size = new System.Drawing.Size(275, 155);
             this.exploitButton.TabIndex = 0;
@@ -44,7 +44,7 @@
             // 
             // outputTextBox
             // 
-            this.outputTextBox.Location = new System.Drawing.Point(178, 292);
+            this.outputTextBox.Location = new System.Drawing.Point(178, 200);
             this.outputTextBox.Multiline = true;
             this.outputTextBox.Name = "outputTextBox";
             this.outputTextBox.Size = new System.Drawing.Size(275, 136);
@@ -55,7 +55,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(668, 522);
+            this.ClientSize = new System.Drawing.Size(668, 390);
             this.Controls.Add(this.outputTextBox);
             this.Controls.Add(this.exploitButton);
             this.Name = "Buffer";

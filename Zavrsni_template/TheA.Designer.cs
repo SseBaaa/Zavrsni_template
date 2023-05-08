@@ -37,9 +37,9 @@
             // 
             this.groupBox1.Controls.Add(this.richTextBox1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox1.Location = new System.Drawing.Point(58, 56);
+            this.groupBox1.Location = new System.Drawing.Point(55, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(550, 394);
+            this.groupBox1.Size = new System.Drawing.Size(550, 354);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Assembly/Machine Code Overview";
@@ -49,7 +49,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(23, 40);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(514, 334);
+            this.richTextBox1.Size = new System.Drawing.Size(514, 296);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -58,7 +58,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(668, 522);
+            this.ClientSize = new System.Drawing.Size(668, 390);
             this.Controls.Add(this.groupBox1);
             this.Name = "TheA";
             this.Text = "TheA";

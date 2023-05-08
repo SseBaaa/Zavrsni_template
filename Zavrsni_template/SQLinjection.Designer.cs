@@ -37,14 +37,14 @@
             // 
             // textBoxURL
             // 
-            this.textBoxURL.Location = new System.Drawing.Point(137, 138);
+            this.textBoxURL.Location = new System.Drawing.Point(137, 61);
             this.textBoxURL.Name = "textBoxURL";
             this.textBoxURL.Size = new System.Drawing.Size(366, 20);
             this.textBoxURL.TabIndex = 0;
             // 
             // textBoxReport
             // 
-            this.textBoxReport.Location = new System.Drawing.Point(137, 183);
+            this.textBoxReport.Location = new System.Drawing.Point(137, 109);
             this.textBoxReport.Multiline = true;
             this.textBoxReport.Name = "textBoxReport";
             this.textBoxReport.Size = new System.Drawing.Size(366, 169);
@@ -54,7 +54,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(134, 122);
+            this.label1.Location = new System.Drawing.Point(137, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 13);
             this.label1.TabIndex = 2;
@@ -64,7 +64,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(137, 165);
+            this.label2.Location = new System.Drawing.Point(137, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 3;
@@ -72,7 +72,7 @@
             // 
             // buttonStart
             // 
-            this.buttonStart.Location = new System.Drawing.Point(277, 379);
+            this.buttonStart.Location = new System.Drawing.Point(277, 314);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(75, 23);
             this.buttonStart.TabIndex = 4;
@@ -85,7 +85,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(668, 522);
+            this.ClientSize = new System.Drawing.Size(668, 390);
             this.Controls.Add(this.buttonStart);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -93,6 +93,7 @@
             this.Controls.Add(this.textBoxURL);
             this.Name = "SQLinjection";
             this.Text = "SQLinjection";
+            this.Load += new System.EventHandler(this.SQLinjection_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -49,7 +49,7 @@
             // buttonDecipher
             // 
             this.buttonDecipher.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buttonDecipher.Location = new System.Drawing.Point(290, 300);
+            this.buttonDecipher.Location = new System.Drawing.Point(296, 314);
             this.buttonDecipher.Name = "buttonDecipher";
             this.buttonDecipher.Size = new System.Drawing.Size(75, 23);
             this.buttonDecipher.TabIndex = 1;
@@ -93,7 +93,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(668, 522);
+            this.ClientSize = new System.Drawing.Size(668, 390);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxDecipher);

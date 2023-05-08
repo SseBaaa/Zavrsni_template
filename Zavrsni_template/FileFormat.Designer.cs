@@ -35,7 +35,7 @@
             // 
             // btnOpenFile
             // 
-            this.btnOpenFile.Location = new System.Drawing.Point(184, 117);
+            this.btnOpenFile.Location = new System.Drawing.Point(184, 33);
             this.btnOpenFile.Name = "btnOpenFile";
             this.btnOpenFile.Size = new System.Drawing.Size(292, 164);
             this.btnOpenFile.TabIndex = 0;
@@ -49,7 +49,7 @@
             // 
             // txtHeader
             // 
-            this.txtHeader.Location = new System.Drawing.Point(184, 306);
+            this.txtHeader.Location = new System.Drawing.Point(184, 223);
             this.txtHeader.Multiline = true;
             this.txtHeader.Name = "txtHeader";
             this.txtHeader.Size = new System.Drawing.Size(292, 131);
@@ -60,7 +60,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(668, 522);
+            this.ClientSize = new System.Drawing.Size(668, 390);
             this.Controls.Add(this.txtHeader);
             this.Controls.Add(this.btnOpenFile);
             this.Name = "FileFormat";

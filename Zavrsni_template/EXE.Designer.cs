@@ -43,9 +43,9 @@
             // 
             // btnGuess
             // 
-            this.btnGuess.Location = new System.Drawing.Point(198, 216);
+            this.btnGuess.Location = new System.Drawing.Point(198, 93);
             this.btnGuess.Name = "btnGuess";
-            this.btnGuess.Size = new System.Drawing.Size(232, 102);
+            this.btnGuess.Size = new System.Drawing.Size(241, 102);
             this.btnGuess.TabIndex = 0;
             this.btnGuess.Text = "guess";
             this.btnGuess.UseVisualStyleBackColor = true;
@@ -53,14 +53,14 @@
             // 
             // textBoxLower
             // 
-            this.textBoxLower.Location = new System.Drawing.Point(198, 190);
+            this.textBoxLower.Location = new System.Drawing.Point(198, 67);
             this.textBoxLower.Name = "textBoxLower";
             this.textBoxLower.Size = new System.Drawing.Size(100, 20);
             this.textBoxLower.TabIndex = 1;
             // 
             // textBoxUpper
             // 
-            this.textBoxUpper.Location = new System.Drawing.Point(330, 190);
+            this.textBoxUpper.Location = new System.Drawing.Point(339, 67);
             this.textBoxUpper.Name = "textBoxUpper";
             this.textBoxUpper.Size = new System.Drawing.Size(100, 20);
             this.textBoxUpper.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(195, 174);
+            this.label1.Location = new System.Drawing.Point(195, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 3;
@@ -79,7 +79,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(330, 171);
+            this.label2.Location = new System.Drawing.Point(336, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 13);
             this.label2.TabIndex = 4;
@@ -87,10 +87,10 @@
             // 
             // textBoxOutput
             // 
-            this.textBoxOutput.Location = new System.Drawing.Point(198, 325);
+            this.textBoxOutput.Location = new System.Drawing.Point(198, 201);
             this.textBoxOutput.Multiline = true;
             this.textBoxOutput.Name = "textBoxOutput";
-            this.textBoxOutput.Size = new System.Drawing.Size(232, 109);
+            this.textBoxOutput.Size = new System.Drawing.Size(241, 109);
             this.textBoxOutput.TabIndex = 5;
             // 
             // EXE
@@ -98,7 +98,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(668, 522);
+            this.ClientSize = new System.Drawing.Size(668, 390);
             this.Controls.Add(this.textBoxOutput);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

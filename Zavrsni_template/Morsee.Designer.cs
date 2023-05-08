@@ -55,7 +55,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(21, 27);
+            this.label1.Location = new System.Drawing.Point(151, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 13);
             this.label1.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(343, 27);
+            this.label2.Location = new System.Drawing.Point(483, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 13);
             this.label2.TabIndex = 3;
@@ -73,7 +73,7 @@
             // 
             // buttonIspisi
             // 
-            this.buttonIspisi.Location = new System.Drawing.Point(306, 208);
+            this.buttonIspisi.Location = new System.Drawing.Point(301, 264);
             this.buttonIspisi.Name = "buttonIspisi";
             this.buttonIspisi.Size = new System.Drawing.Size(75, 23);
             this.buttonIspisi.TabIndex = 4;
@@ -86,7 +86,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(668, 522);
+            this.ClientSize = new System.Drawing.Size(668, 390);
             this.Controls.Add(this.buttonIspisi);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

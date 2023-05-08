@@ -41,16 +41,16 @@
             // 
             // textBoxDisk
             // 
-            this.textBoxDisk.Location = new System.Drawing.Point(22, 82);
+            this.textBoxDisk.Location = new System.Drawing.Point(83, 21);
             this.textBoxDisk.Name = "textBoxDisk";
-            this.textBoxDisk.Size = new System.Drawing.Size(444, 20);
+            this.textBoxDisk.Size = new System.Drawing.Size(66, 20);
             this.textBoxDisk.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(22, 69);
+            this.label1.Location = new System.Drawing.Point(22, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 13);
             this.label1.TabIndex = 1;
@@ -60,7 +60,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(22, 136);
+            this.label2.Location = new System.Drawing.Point(22, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 2;
@@ -68,14 +68,14 @@
             // 
             // textBoxImageFile
             // 
-            this.textBoxImageFile.Location = new System.Drawing.Point(22, 152);
+            this.textBoxImageFile.Location = new System.Drawing.Point(83, 59);
             this.textBoxImageFile.Name = "textBoxImageFile";
-            this.textBoxImageFile.Size = new System.Drawing.Size(602, 20);
+            this.textBoxImageFile.Size = new System.Drawing.Size(449, 20);
             this.textBoxImageFile.TabIndex = 3;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(25, 203);
+            this.button1.Location = new System.Drawing.Point(25, 85);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 23);
             this.button1.TabIndex = 4;
@@ -85,7 +85,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(25, 449);
+            this.button2.Location = new System.Drawing.Point(25, 329);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 5;
@@ -95,7 +95,7 @@
             // 
             // textBoxString
             // 
-            this.textBoxString.Location = new System.Drawing.Point(25, 276);
+            this.textBoxString.Location = new System.Drawing.Point(25, 161);
             this.textBoxString.Name = "textBoxString";
             this.textBoxString.Size = new System.Drawing.Size(599, 20);
             this.textBoxString.TabIndex = 6;
@@ -104,7 +104,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(22, 260);
+            this.label3.Location = new System.Drawing.Point(22, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 7;
@@ -112,7 +112,7 @@
             // 
             // textBoxrjesenje
             // 
-            this.textBoxrjesenje.Location = new System.Drawing.Point(25, 317);
+            this.textBoxrjesenje.Location = new System.Drawing.Point(25, 197);
             this.textBoxrjesenje.Multiline = true;
             this.textBoxrjesenje.Name = "textBoxrjesenje";
             this.textBoxrjesenje.ReadOnly = true;
@@ -124,7 +124,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(668, 522);
+            this.ClientSize = new System.Drawing.Size(668, 390);
             this.Controls.Add(this.textBoxrjesenje);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxString);
