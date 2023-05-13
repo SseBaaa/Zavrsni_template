@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Zavrsni_template
 {
     
@@ -19,64 +20,8 @@ namespace Zavrsni_template
     {
         private ToolTip helpToolTip;
         private TextBox helpTextBox;
-        BigInteger d;
-
-        public static string DecryptRSA(byte[] encryptedData, string privateKeyXml)
-        {
-            // Create a new instance of the RSACryptoServiceProvider
-            RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
-
-            // Load the private key into the RSACryptoServiceProvider
-            rsa.FromXmlString(privateKeyXml);
-
-            // Decrypt the data using the RSACryptoServiceProvider
-            byte[] decryptedData = rsa.Decrypt(encryptedData, false);
-
-            // Convert the decrypted data to a string and return it
-            return Encoding.UTF8.GetString(decryptedData);
-        }
-        BigInteger[] FactorizeModulus(BigInteger nnn)
-        {
-            // Find the prime factors of n using trial division
-            // Split the range of possible factors into equal parts for parallelization
-
-            int cores = Environment.ProcessorCount;
-            BigInteger rangeSize = (nnn / cores) + 1;
-            BigInteger rangeStart = 1;
-            BigInteger rangeEnd = rangeStart + rangeSize;
-
-            // Divide the range of possible factors into chunks for parallel processing
-            BigInteger[][] ranges = new BigInteger[cores][];
-            for (int i = 0; i < cores; i++)
-            {
-                ranges[i] = new BigInteger[] { rangeStart, rangeEnd };
-                rangeStart = rangeEnd;
-                rangeEnd = rangeStart + rangeSize;
-            }
-
-            // Find the prime factors of n in parallel
-            ConcurrentBag<BigInteger> factors = new ConcurrentBag<BigInteger>();
-            Parallel.ForEach(ranges, range =>
-            {
-                for (BigInteger i = range[0]; i < range[1]; i += 2)
-                {
-                    if (nnn % i == 0)
-                    {
-                        factors.Add(i);
-                        factors.Add(nnn / i);
-                    }
-                }
-            });
-            return factors.ToArray();
-        }
-        BigInteger CalculatePrivateKey(BigInteger pp, BigInteger qq, BigInteger ee)
-        {
-            // Calculate the private key d using the Chinese remainder theorem
-            BigInteger phi = (pp - 1) * (qq - 1);
-            BigInteger ddd = BigInteger.ModPow(ee, -1, phi);
-
-            return ddd;
-        }
+       
+        
         public RSA()
         {
             InitializeComponent();
@@ -100,36 +45,166 @@ namespace Zavrsni_template
 
         private void buttonIzracun_Click(object sender, EventArgs e)
         {
-            string nn = textBoxN.Text;
-            string ee = textBoxE.Text;
-            string cc = textBoxC.Text;
-            BigInteger n = BigInteger.Parse(nn);
-            BigInteger eee = BigInteger.Parse(ee);
-            BigInteger p = BigInteger.One, q = BigInteger.One;
-            if(textBoxD.Text == " ")
-            {
-                Parallel.ForEach(FactorizeModulus(n), factor =>
-                {
-                    if (p == BigInteger.One)
-                    {
-                        p = factor;
-                    }
-                    else if (q == BigInteger.One)
-                    {
-                        q = factor;
-                    }
-                });
-                d = CalculatePrivateKey(p, q, eee);
-            }
-            else
-            {
-                d = BigInteger.Parse(textBoxD.Text);
-            }
-            byte[] encryptedData = new byte[] { Convert.ToByte(cc) };
-            string privateKeyXml = Convert.ToString(d);
-            string decryptedText = DecryptRSA(encryptedData, privateKeyXml);
-            textBoxRjesenje.Text = decryptedText;
+            // Example RSA public key (n, e)
+            BigInteger n = BigInteger.Parse("227010481295437363334259960947493668895875336466084780038173258247009162675779735389791151574049166747880487470296548479");
+            BigInteger ee = BigInteger.Parse("4299603643464496340306803008986985033344727959816846309565441761356032680702812800989967589892257060614723463093217112213");
+
+            // Use Wiener's attack to find d
+            //BigInteger d = WienerAttack(ee, n);
+            BigInteger d = BigInteger.Parse("123456789");
+
             
+            textBoxD.Text = d.ToString();
+
+            // Example RSA ciphertext (c)
+            BigInteger c = BigInteger.Parse("26521380600526975339768376280067651581621560548292886854847816531185984217017541127330203022991725903859432176941650100774717850972611251762217510334778045492654098960924370847607781942516883870222321935770333031837231549408420167987316080264842031954097700095632715734399908142040045931192713083178294525147455");
+
+            // Decrypt the ciphertext
+            
+
+            // Convert m to string
+            string plaintext = Decrypt(c, d, n);
+
+            textBoxRjesenje.Text = plaintext;
+
+        }
+        public static string Decrypt(BigInteger c, BigInteger d, BigInteger n)
+        {
+            // Decrypt the ciphertext
+            BigInteger m = BigInteger.ModPow(c, d, n);
+
+            // Convert m to a byte array
+            byte[] bytes = m.ToByteArray();
+
+            // BigInteger's byte order is reversed, so we need to reverse the array
+            //Array.Reverse(bytes);
+
+            // Convert the byte array to a string
+            string plaintext = BytesToHexString(bytes);
+
+            // Return the plaintext
+            return plaintext;
+        }
+        public static string BytesToHexString(byte[] bytes)
+        {
+            return BitConverter.ToString(bytes).Replace("-", "");
+        }
+        
+
+
+
+        public static Fraction[] ContinuedFractions(BigInteger e, BigInteger n)
+        {
+            BigInteger q;
+            BigInteger r;
+            BigInteger a = e;
+            BigInteger b = n;
+            List<Fraction> fractions = new List<Fraction>();
+
+            while (b != 0)
+            {
+                q = a / b;
+                r = a % b;
+                fractions.Add(new Fraction(q, 1));
+                a = b;
+                b = r;
+            }
+
+            return fractions.ToArray();
+        }
+
+        public static Fraction Convergent(Fraction[] fractions, int k)
+        {
+            BigInteger numerator = fractions[k].numerator;
+            BigInteger denominator = 1;
+
+            for (int i = k - 1; i >= 0; --i)
+            {
+                BigInteger temp = numerator;
+                numerator = fractions[i].numerator * numerator + denominator;
+                denominator = temp;
+            }
+
+            return new Fraction(numerator, denominator);
+        }
+
+        public static BigInteger WienerAttack(BigInteger e, BigInteger n)
+        {
+            Fraction[] fractions = ContinuedFractions(e, n);
+            Fraction k;
+            BigInteger d;
+            BigInteger phi;
+
+            for (int i = 0; i < fractions.Length; ++i)
+            {
+                k = Convergent(fractions, i);
+                if (k.denominator == 0) continue;
+                d = k.numerator;
+
+                // Skip if d is even or n <= d
+                if (d % 2 == 0 || n <= d) continue;
+
+                // Check if k.denominator divides (e*d - 1)
+                if ((e * d - 1) % k.denominator != 0) continue;
+
+                phi = (e * d - 1) / k.denominator;
+
+                // Calculate b^2 - 4ac for the quadratic equation
+                BigInteger discriminant = BigInteger.Pow(n - phi + 1, 2) - 4 * n;
+
+                // Check if discriminant is perfect square
+                if (IsPerfectSquare(discriminant))
+                {
+                    // The private key has been found
+                    return d;
+                    
+                }
+            }
+
+            return 0;
+        }
+
+        private static bool IsPerfectSquare(BigInteger number)
+        {
+            if (number < 0) return false;
+
+            BigInteger root = BigInteger.Zero;
+            BigInteger bit = BigInteger.One << (BitLength(number) - 2);
+
+            while (bit > 0)
+            {
+                root += bit;
+                if (number < root)
+                {
+                    root -= bit;
+                }
+                bit >>= 2;
+            }
+
+            return root * root == number;
+        }
+
+        private static int BitLength(BigInteger value)
+        {
+            int bitLength = 0;
+            while (value != 0)
+            {
+                bitLength++;
+                value >>= 1;
+            }
+
+            return bitLength;
+        }
+        public class Fraction
+        {
+            public BigInteger numerator;
+            public BigInteger denominator;
+
+            public Fraction(BigInteger num, BigInteger den)
+            {
+                numerator = num;
+                denominator = den;
+            }
         }
         private void InitializeHelpButton()
         {
@@ -184,6 +259,24 @@ namespace Zavrsni_template
                 "3." + "https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Fa17/notes/10.1_Cryptography/RSA_Express_EncryptDecrypt_v2.html";
 
             helpTextBox.Visible = !helpTextBox.Visible;
+        }
+
+        private void textBoxN_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            byte[] bytes = Encoding.UTF8.GetBytes("CTF2023[123456789]");
+            Array.Reverse(bytes);  // BigInteger uses reverse byte order
+            BigInteger m = new BigInteger(bytes);
+
+            // Encrypt m with public key (n, e) to create ciphertext c
+            BigInteger nnnn = BigInteger.Parse("95138637410952520501461578708575920250130685590971749742034095602622037002139823317876639291719668267045699274479208654368906489755673550258736358975355134596024704361835095396347644118074376059957249939177202008371163010921653688039854186096151093570941669956823862233161819770176084683265072740696180808742393");
+            BigInteger eee = BigInteger.Parse("74327492598494356252743008850121114112863767602337483758817650492168090649724998019982955283105900899716828175738333203625716366611000601177024355668150721487059235084960020759524981007515019133051220042630362455625181749378383625664810139756476321257090864849072520817547233345715372767326612108120068976034289");
+            BigInteger c = BigInteger.ModPow(m, eee, nnnn);
+            textBox1.Text = c.ToString();
         }
     }
 }

@@ -38,47 +38,54 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonIzracun = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBoxC
             // 
+            this.textBoxC.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxC.Location = new System.Drawing.Point(21, 25);
             this.textBoxC.Multiline = true;
             this.textBoxC.Name = "textBoxC";
-            this.textBoxC.Size = new System.Drawing.Size(328, 36);
+            this.textBoxC.Size = new System.Drawing.Size(626, 36);
             this.textBoxC.TabIndex = 0;
             // 
             // textBoxE
             // 
+            this.textBoxE.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxE.Location = new System.Drawing.Point(21, 81);
             this.textBoxE.Multiline = true;
             this.textBoxE.Name = "textBoxE";
-            this.textBoxE.Size = new System.Drawing.Size(328, 36);
+            this.textBoxE.Size = new System.Drawing.Size(626, 36);
             this.textBoxE.TabIndex = 1;
             this.textBoxE.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBoxN
             // 
+            this.textBoxN.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxN.Location = new System.Drawing.Point(21, 135);
             this.textBoxN.Multiline = true;
             this.textBoxN.Name = "textBoxN";
-            this.textBoxN.Size = new System.Drawing.Size(328, 36);
+            this.textBoxN.Size = new System.Drawing.Size(626, 36);
             this.textBoxN.TabIndex = 2;
+            this.textBoxN.TextChanged += new System.EventHandler(this.textBoxN_TextChanged);
             // 
             // textBoxD
             // 
+            this.textBoxD.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxD.Location = new System.Drawing.Point(21, 188);
             this.textBoxD.Multiline = true;
             this.textBoxD.Name = "textBoxD";
-            this.textBoxD.Size = new System.Drawing.Size(328, 36);
+            this.textBoxD.Size = new System.Drawing.Size(626, 36);
             this.textBoxD.TabIndex = 3;
             // 
             // textBoxRjesenje
             // 
-            this.textBoxRjesenje.Location = new System.Drawing.Point(369, 25);
+            this.textBoxRjesenje.Location = new System.Drawing.Point(360, 239);
             this.textBoxRjesenje.Multiline = true;
             this.textBoxRjesenje.Name = "textBoxRjesenje";
-            this.textBoxRjesenje.Size = new System.Drawing.Size(287, 199);
+            this.textBoxRjesenje.Size = new System.Drawing.Size(287, 139);
             this.textBoxRjesenje.TabIndex = 4;
             // 
             // label1
@@ -124,7 +131,7 @@
             // 
             // buttonIzracun
             // 
-            this.buttonIzracun.Location = new System.Drawing.Point(24, 231);
+            this.buttonIzracun.Location = new System.Drawing.Point(12, 316);
             this.buttonIzracun.Name = "buttonIzracun";
             this.buttonIzracun.Size = new System.Drawing.Size(96, 35);
             this.buttonIzracun.TabIndex = 9;
@@ -132,12 +139,32 @@
             this.buttonIzracun.UseVisualStyleBackColor = true;
             this.buttonIzracun.Click += new System.EventHandler(this.buttonIzracun_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 263);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(114, 239);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(240, 139);
+            this.textBox1.TabIndex = 12;
+            // 
             // RSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(21)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(668, 390);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonIzracun);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -168,5 +195,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonIzracun;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
