@@ -130,8 +130,8 @@ namespace Zavrsni_template
         {
 
             // Set the TextBox text to the desired message
-            helpTextBox.Text = "1." + "https://en.wikipedia.org/wiki/Exif" + Environment.NewLine +
-                "2." + "https://petapixel.com/what-is-exif-data/" + Environment.NewLine +
+            helpTextBox.Text = "1." + "https://en.wikipedia.org/wiki/Exif" + Environment.NewLine + Environment.NewLine +
+                "2." + "https://petapixel.com/what-is-exif-data/" + Environment.NewLine + Environment.NewLine +
                 "3." + "https://jimpl.com/";
 
             helpTextBox.Visible = !helpTextBox.Visible;

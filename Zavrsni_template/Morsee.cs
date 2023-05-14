@@ -115,8 +115,8 @@ namespace Zavrsni_template
         {
 
             // Set the TextBox text to the desired message
-            helpTextBox.Text = "1." + "https://morsedecoder.com/" + Environment.NewLine +
-                "2." + "https://www.dcode.fr/morse-code" + Environment.NewLine +
+            helpTextBox.Text = "1." + "https://morsedecoder.com/" + Environment.NewLine + Environment.NewLine +
+                "2." + "https://www.dcode.fr/morse-code" + Environment.NewLine + Environment.NewLine +
                 "3." + "https://md5decrypt.net/en/Morse-code/";
 
             helpTextBox.Visible = !helpTextBox.Visible;

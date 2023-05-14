@@ -152,8 +152,8 @@ namespace Zavrsni_template
             // Create a TextBox
             helpTextBox = new TextBox
             {
-                Location = new Point(helpButton.Location.X, helpButton.Location.Y - 20), // Above the button
-                Size = new Size(400, 60), // Adjust the size as needed
+                Location = new Point(helpButton.Location.X, helpButton.Location.Y - 65), // Above the button
+                Size = new Size(150, 100), // Adjust the size as needed
                 Visible = false, // Initially hide the TextBox
                 ReadOnly = true, // Make the TextBox read-only, so the text can be copied but not modified
                 Multiline = true,
@@ -168,8 +168,8 @@ namespace Zavrsni_template
         {
 
             // Set the TextBox text to the desired message
-            helpTextBox.Text = "1." + "https://www.dcode.fr/tools-list#character_encoding" + Environment.NewLine +
-                "2." + "https://pentesttools.net/basecrack-best-decoder-tool-for-base-encoding-schemes/" + Environment.NewLine +
+            helpTextBox.Text = "1." + "https://www.dcode.fr/tools-list#character_encoding" + Environment.NewLine + Environment.NewLine + 
+                "2." + "https://pentesttools.net/basecrack-best-decoder-tool-for-base-encoding-schemes/" + Environment.NewLine + Environment.NewLine +
                 "3." + "https://www.base64decode.net/";
 
             helpTextBox.Visible = !helpTextBox.Visible;

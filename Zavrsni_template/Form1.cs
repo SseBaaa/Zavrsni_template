@@ -211,5 +211,11 @@ namespace Zavrsni_template
         {
             openChildForm(new Stack());
         }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            Settings objUI = new Settings();
+            objUI.Show();
+        }
     }
 }

@@ -102,8 +102,8 @@ namespace Zavrsni_template
         {
 
             // Set the TextBox text to the desired message
-            helpTextBox.Text = "1." + "https://www.dcode.fr/rot-cipher" + Environment.NewLine +
-                "2." + "https://www.ultimatesolver.com/en/rot-encryption" + Environment.NewLine +
+            helpTextBox.Text = "1." + "https://www.dcode.fr/rot-cipher" + Environment.NewLine + Environment.NewLine +
+                "2." + "https://www.ultimatesolver.com/en/rot-encryption" + Environment.NewLine + Environment.NewLine +
                 "3." + "https://www.cachesleuth.com/rot.html";
 
             helpTextBox.Visible = !helpTextBox.Visible;

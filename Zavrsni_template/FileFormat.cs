@@ -160,8 +160,8 @@ namespace Zavrsni_template
         {
 
             // Set the TextBox text to the desired message
-            helpTextBox.Text = "1." + "https://en.wikipedia.org/wiki/List_of_file_signatures" + Environment.NewLine +
-                "2." + "https://www.garykessler.net/library/file_sigs.html" + Environment.NewLine +
+            helpTextBox.Text = "1." + "https://en.wikipedia.org/wiki/List_of_file_signatures" + Environment.NewLine + Environment.NewLine +
+                "2." + "https://www.garykessler.net/library/file_sigs.html" + Environment.NewLine + Environment.NewLine +
                 "3." + "https://www.microfocus.com/documentation/server-express/sx40/fhfile.htm";
 
             helpTextBox.Visible = !helpTextBox.Visible;

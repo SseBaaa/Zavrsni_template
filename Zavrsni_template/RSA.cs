@@ -239,8 +239,8 @@ namespace Zavrsni_template
             // Create a TextBox
             helpTextBox = new TextBox
             {
-                Location = new Point(helpButton.Location.X, helpButton.Location.Y - 65), // Above the button
-                Size = new Size(400, 60), // Adjust the size as needed
+                Location = new Point(helpButton.Location.X, helpButton.Location.Y - 105), // Above the button
+                Size = new Size(175, 100), // Adjust the size as needed
                 Visible = false, // Initially hide the TextBox
                 ReadOnly = true, // Make the TextBox read-only, so the text can be copied but not modified
                 Multiline = true,
@@ -254,8 +254,8 @@ namespace Zavrsni_template
         {
             
             // Set the TextBox text to the desired message
-            helpTextBox.Text = "1." + "https://www.dcode.fr/rsa-cipher" + Environment.NewLine + 
-                "2." + "https://www.devglan.com/online-tools/rsa-encryption-decryption" + Environment.NewLine +
+            helpTextBox.Text = "1." + "https://www.dcode.fr/rsa-cipher" + Environment.NewLine + Environment.NewLine +
+                "2." + "https://www.devglan.com/online-tools/rsa-encryption-decryption" + Environment.NewLine + Environment.NewLine +
                 "3." + "https://www.cs.drexel.edu/~jpopyack/Courses/CSP/Fa17/notes/10.1_Cryptography/RSA_Express_EncryptDecrypt_v2.html";
 
             helpTextBox.Visible = !helpTextBox.Visible;
@@ -268,15 +268,7 @@ namespace Zavrsni_template
 
         private void button1_Click(object sender, EventArgs e)
         {
-            byte[] bytes = Encoding.UTF8.GetBytes("CTF2023[123456789]");
-            Array.Reverse(bytes);  // BigInteger uses reverse byte order
-            BigInteger m = new BigInteger(bytes);
-
-            // Encrypt m with public key (n, e) to create ciphertext c
-            BigInteger nnnn = BigInteger.Parse("95138637410952520501461578708575920250130685590971749742034095602622037002139823317876639291719668267045699274479208654368906489755673550258736358975355134596024704361835095396347644118074376059957249939177202008371163010921653688039854186096151093570941669956823862233161819770176084683265072740696180808742393");
-            BigInteger eee = BigInteger.Parse("74327492598494356252743008850121114112863767602337483758817650492168090649724998019982955283105900899716828175738333203625716366611000601177024355668150721487059235084960020759524981007515019133051220042630362455625181749378383625664810139756476321257090864849072520817547233345715372767326612108120068976034289");
-            BigInteger c = BigInteger.ModPow(m, eee, nnnn);
-            textBox1.Text = c.ToString();
+            
         }
     }
 }
